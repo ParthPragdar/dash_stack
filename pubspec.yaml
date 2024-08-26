@@ -1,0 +1,24 @@
+name: dash_stack
+description: "A new Flutter Package."
+version: 0.0.1
+homepage: https://github.com/ParthPragdar/dash_stack.git
+
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dio: ^5.4.3+1
+  get: ^4.6.6
+  webview_flutter: ^4.8.0
+  get_storage: ^2.1.1
+  connectivity_plus: ^6.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
