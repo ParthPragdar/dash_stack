@@ -35,7 +35,7 @@ class _DashStackState extends State<DashStack> {
                       actionElement: e,
                       key: UniqueKey(),
                     )),
-                Positioned.fill(child: widget.child),
+                Positioned.fill(child: Container(color: Theme.of(context).canvasColor, child: widget.child)),
               ],
             );
           }),
