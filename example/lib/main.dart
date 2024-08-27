@@ -2,7 +2,7 @@ import 'package:dash_stack/dash_stack.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
-  // await DashStack.instance.initialize();
+  await DashStack.instance.initialize();
 
   runApp(const MyApp());
 }

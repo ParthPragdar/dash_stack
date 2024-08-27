@@ -39,7 +39,7 @@ class _DashStackViewState extends State<DashStackView> {
                       actionElement: e,
                       key: UniqueKey(),
                     )),
-                Positioned.fill(child: Container(color: Colors.transparent ?? Theme.of(context).canvasColor, child: widget.child)),
+                Positioned.fill(child: Container(color: Theme.of(context).canvasColor, child: widget.child)),
               ],
             );
           }),

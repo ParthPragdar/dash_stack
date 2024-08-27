@@ -33,7 +33,6 @@ class MasterController extends GetxController {
   List<Map<String, dynamic>> activityData = [];
   callUserActivity() {
     if (activityData.isEmpty) return;
-    //fdffdfdf
     Api().call(
       url: CS.mUserActivity,
       isProgressShow: false,
