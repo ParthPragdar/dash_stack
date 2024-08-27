@@ -3,14 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../dash_stack.dart';
 import '../service/api_call.dart';
 import '../utils/common_functions.dart';
 import '../utils/string.dart';
 
 class MasterController extends GetxController {
   static MasterController get to => Get.find();
-
-  String packageName = "com.dash.girls_talks";
 
   callUserDetail() async {
     try {
@@ -20,9 +19,9 @@ class MasterController extends GetxController {
         await Api().call(
           url: CS.mUserDetail,
           isProgressShow: false,
-          params: {"package_name": packageName, "u_token": token},
-          success: (response) {
-            storage.write(CS.sUserToken, token);
+          params: {"package_name": DashStack.instance.packageName, "u_token": token},
+          success: (response) async {
+            await storage.write(CS.sUserToken, token);
           },
         );
       }
@@ -74,8 +73,8 @@ class MasterController extends GetxController {
   RxList actionList = [].obs;
   int actionCount = 2;
   callGetAction() async {
-    if (packageName.isEmpty) return;
-    String url = "${CS.mGetActivityByPackageName}$packageName.json";
+    if (DashStack.instance.packageName.isEmpty) return;
+    String url = "${CS.mGetActivityByPackageName}${DashStack.instance.packageName}.json";
     await Api().call(
       url: url,
       methodType: MethodType.get,

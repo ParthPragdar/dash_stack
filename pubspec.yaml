@@ -17,6 +17,7 @@ dependencies:
   webview_flutter: ^4.8.0
   get_storage: ^2.1.1
   connectivity_plus: ^6.0.5
+  package_info_plus: ^8.0.2
 
 dev_dependencies:
   flutter_test:

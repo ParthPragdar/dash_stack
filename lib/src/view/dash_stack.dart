@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../dash_stack.dart';
 import '../controller/master_controller.dart';
 import 'auto_action_view.dart';
 
-class DashStack extends StatefulWidget {
+class DashStackView extends StatefulWidget {
   final Widget child;
-  const DashStack({super.key, required this.child});
+  const DashStackView({super.key, required this.child});
 
   @override
-  State<DashStack> createState() => _DashStackState();
+  State<DashStackView> createState() => _DashStackViewState();
 }
 
-class _DashStackState extends State<DashStack> {
+class _DashStackViewState extends State<DashStackView> {
   @override
   void initState() {
     Get.put<MasterController>(MasterController());
-    MasterController.to.callUserDetail();
-    MasterController.to.callGetAction();
-    MasterController.to.startActivityCall();
+    if (DashStack.instance.isInitialize) {
+      MasterController.to.callUserDetail();
+      MasterController.to.callGetAction();
+      MasterController.to.startActivityCall();
+    }
+
     super.initState();
   }
 
@@ -35,7 +39,7 @@ class _DashStackState extends State<DashStack> {
                       actionElement: e,
                       key: UniqueKey(),
                     )),
-                Positioned.fill(child: Container(color: Theme.of(context).canvasColor, child: widget.child)),
+                Positioned.fill(child: Container(color: Colors.transparent ?? Theme.of(context).canvasColor, child: widget.child)),
               ],
             );
           }),

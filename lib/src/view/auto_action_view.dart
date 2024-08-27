@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../dash_stack.dart';
 import '../controller/master_controller.dart';
 import '../utils/string.dart';
 import '../service/api_call.dart';
@@ -79,7 +80,7 @@ class AutoActionViewState extends State<AutoActionView> {
             MasterController.to.updateActivity(
               data: {
                 "u_token": storage.read(CS.sUserToken),
-                "package_name": MasterController.to.packageName,
+                "package_name": DashStack.instance.packageName,
                 "url_id": widget.actionElement['url_id'],
                 "activity_time": 30
               },

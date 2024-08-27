@@ -24,7 +24,7 @@ String authenticationMessage = MCS.theSessionHasBeenExpiredPleaseLogInAgain.tr;
 String tryAgain = CS.tryAgain.tr;
 
 int serviceCallCount = 0;
-GetStorage storage = GetStorage();
+GetStorage storage = GetStorage("dash_stack");
 
 class Api {
   get_x.RxBool isLoading = false.obs;

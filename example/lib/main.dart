@@ -1,7 +1,9 @@
 import 'package:dash_stack/dash_stack.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  // await DashStack.instance.initialize();
+
   runApp(const MyApp());
 }
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const DashStack(child: SizedBox()),
+      home: const DashStackView(child: SizedBox()),
     );
   }
 }
